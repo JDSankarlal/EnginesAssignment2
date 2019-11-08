@@ -9,8 +9,8 @@ public class MetricsLogger : MonoBehaviour
     const string DLL_NAME = "MetricsLogger";
 
     [DllImport(DLL_NAME)]
-
     private static extern int TestFunction();
+  
 
 
     // Update is called once per frame
@@ -20,5 +20,7 @@ public class MetricsLogger : MonoBehaviour
         {
             Debug.Log(TestFunction());
         }
+
+        
     }
 }

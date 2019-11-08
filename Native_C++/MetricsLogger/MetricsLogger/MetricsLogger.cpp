@@ -6,3 +6,9 @@ int MetricsLogger::TestFunction()
 
 }
 
+void MetricsLogger::WriteInputToText(char input)
+{
+
+
+}
+

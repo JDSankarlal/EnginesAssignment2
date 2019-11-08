@@ -7,3 +7,9 @@ int TestFunction()
 {
 	return metricsLogger.TestFunction();
 }
+
+void WriteInputToText(char input)
+{
+	return metricsLogger.WriteInputToText(input);
+}
+
