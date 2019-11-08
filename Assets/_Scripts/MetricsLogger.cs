@@ -19,7 +19,7 @@ public class MetricsLogger : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            Debug.Log(TestFunction());
+            KeyCode.
         }
 
         
