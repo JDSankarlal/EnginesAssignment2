@@ -11,7 +11,7 @@ extern "C"
 	//Functions go here, Josh
 
 	PLUGIN_API int TestFunction();
-	PLUGIN_API void WriteInputToText(char input);
+	PLUGIN_API void WriteInputToText(const char* input);
 
 #ifdef __cplusplus
 

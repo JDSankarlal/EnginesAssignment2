@@ -6,9 +6,15 @@ int MetricsLogger::TestFunction()
 
 }
 
-void MetricsLogger::WriteInputToText(char input)
+void MetricsLogger::WriteInputToText(const char* input)
 {
+	std::fstream inputWrite;
 
+	inputWrite.open("MetricsText", std::fstream::out);
+
+	inputWrite << input; 
+
+	inputWrite.close();
 
 }
 

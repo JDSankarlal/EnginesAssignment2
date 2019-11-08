@@ -10,7 +10,8 @@ public class MetricsLogger : MonoBehaviour
 
     [DllImport(DLL_NAME)]
     private static extern int TestFunction();
-  
+    [DllImport(DLL_NAME)]
+    private static extern void WriteInputToText();
 
 
     // Update is called once per frame
@@ -23,4 +24,6 @@ public class MetricsLogger : MonoBehaviour
 
         
     }
+
+    
 }
