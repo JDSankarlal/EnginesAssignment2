@@ -5736,7 +5736,7 @@ GameObject:
   - component: {fileID: 355610516}
   m_Layer: 0
   m_Name: Player 1 (Wizard)
-  m_TagString: Player
+  m_TagString: Player 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7147,7 +7147,7 @@ GameObject:
   - component: {fileID: 1178891860}
   m_Layer: 0
   m_Name: Player 2 (Runner)
-  m_TagString: Player
+  m_TagString: Player 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7328,6 +7328,7 @@ GameObject:
   - component: {fileID: 1221722810}
   - component: {fileID: 1221722811}
   - component: {fileID: 1221722812}
+  - component: {fileID: 1221722813}
   m_Layer: 0
   m_Name: PS_Waypoint Beam
   m_TagString: Waypoint
@@ -7343,7 +7344,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221722809}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.31, z: -35.98}
+  m_LocalPosition: {x: -3, y: 0.31, z: -22.39}
   m_LocalScale: {x: 1.0076, y: 4.6602116, z: 0.9002703}
   m_Children:
   - {fileID: 90763321}
@@ -7380,6 +7381,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1221722813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221722809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 731b9c0942c2e8440980bf650cafa6ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1261275664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7837,9 +7850,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1657711200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05b7b31337359394ab656d740a419ab8, type: 3}
+  m_Script: {fileID: 11500000, guid: aa88563cb6b251643a87c179b439616a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
 --- !u!1 &1744684323
 GameObject:
   m_ObjectHideFlags: 0

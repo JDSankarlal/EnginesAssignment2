@@ -26,7 +26,7 @@ public class Waypoint : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && !touchedWaypoint)
         {
             touchedWaypoint = true;
-            Debug.Log("waypoint move??");
+            //Debug.Log("waypoint move??");
             this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z - 25);
             waypointTime = Time.time;
             
@@ -34,7 +34,7 @@ public class Waypoint : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && !touchedWaypoint2 && touchedWaypoint && Time.time - waypointTime >= 3)
         {
             touchedWaypoint2 = true;
-            Debug.Log("waypoint move 2??");
+            //Debug.Log("waypoint move 2??");
             this.gameObject.SetActive(false);
             
         }

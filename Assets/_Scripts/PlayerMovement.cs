@@ -48,8 +48,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Check player on the ground or not (Unity build in function)
-    void OnTriggerEnter (Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
         isGrounded = true;
+        
     }
+
+    
 }

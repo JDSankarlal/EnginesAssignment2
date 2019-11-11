@@ -74,7 +74,6 @@
      <Compile Include="Assets\_Scripts\ResourceSpawn.cs" />
      <Compile Include="Assets\_Scripts\ResourceStockpile.cs" />
      <Compile Include="Assets\_Scripts\TowerBuild.cs" />
-     <Compile Include="Assets\_Scripts\TutorialResourceSpawn.cs" />
      <Compile Include="Assets\_Scripts\TutorialState.cs" />
      <Compile Include="Assets\_Scripts\Waypoint.cs" />
      <Compile Include="Assets\_Scripts\WizardPickup.cs" />

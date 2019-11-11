@@ -18,14 +18,37 @@ public class TutorialState : MonoBehaviour
     }
 
     public tutorialState state;
+    private static ObjectPool myPool;
+
+    GameObject fob;
+    float woodSpawnTimer = 0;
+    float woodSmallSpawnTimer = 0;
+    float stoneSpawnTimer = 0;
+    float stoneSmallSpawnTimer = 0;
+    float crystalSpawnTimer = 0;
+    float crystalSmallSpawnTimer = 0;
+
+    float speedBoostSpawnTimer = 0;
+
+    int spawnPointX;
+    int spawnPointZ;
     void Start()
     {
         state = tutorialState.learnMovementStage1;
+        myPool = ObjectPool.Instance;
     }
 
     // Update is called once per frame
     void Update()
     {
+        woodSpawnTimer += Time.deltaTime;
+        stoneSpawnTimer += Time.deltaTime;
+        crystalSpawnTimer += Time.deltaTime;
+        woodSmallSpawnTimer += Time.deltaTime;
+        stoneSmallSpawnTimer += Time.deltaTime;
+        crystalSmallSpawnTimer += Time.deltaTime;
+        speedBoostSpawnTimer += Time.deltaTime;
+
         if (state == tutorialState.learnMovementStage1)
         {
             //UI: This is a tower building and movement tutorial
@@ -33,8 +56,6 @@ public class TutorialState : MonoBehaviour
             if (Waypoint.touchedWaypoint)
             {
                 state = tutorialState.learnMovementStage2;
-                //Move light beam to different location on map
-                //change to next state
                 //UI: Great, now walk to the next one!
             }
 
@@ -44,14 +65,22 @@ public class TutorialState : MonoBehaviour
             if (Waypoint.touchedWaypoint2)
             {
                 //start pawaning small resources
+                myPool.SpawnObject("Resource(WoodSmall)", new Vector3(-3, 0.5f, -60), transform.rotation);
+                myPool.SpawnObject("Resource(StoneSmall)", new Vector3(0, 0.5f, -60), transform.rotation);
+                myPool.SpawnObject("Resource(CrystalSmall)", new Vector3(3, 0.5f, -60), transform.rotation);
+                //Debug.Log("Spawn Wood");
                 state = tutorialState.learnPickupSmall;
             }
         }
         if (state == tutorialState.learnPickupSmall)
         {
+            
             if (PlayerPickup.StoneAmount >= 1 && PlayerPickup.WoodAmount >= 1 && PlayerPickup.CrystalAmount >= 1)
             {
                 //delete small resources and start spawning large resources
+                myPool.SpawnObject("Resource(Wood)", new Vector3(-3, 0.5f, -70), transform.rotation);
+                myPool.SpawnObject("Resource(Stone)", new Vector3(0, 0.5f, -70), transform.rotation);
+                myPool.SpawnObject("Resource(Crystal)", new Vector3(3, 0.5f, -70), transform.rotation);
                 state = tutorialState.learnPickupLarge;
             }
         }
@@ -67,12 +96,15 @@ public class TutorialState : MonoBehaviour
         {
             if (PlayerPickup.stoneStock >= 1 && PlayerPickup.woodStock >= 1 && PlayerPickup.crystalStock >= 1)
             {
+                //gameObject b  = GameObject.FindGameObjectsWithTag("Player 2");
+                //b.setactive(false);
+                //b = GameObject.FindGameObjectsWithTag("Player 1");
+                //b.setactive(true);
                 state = tutorialState.learnPickupFromChest;
             }
         }
         if (state == tutorialState.learnPickupFromChest)
         {
-            //switch to spellcaster
             if(WizardResourceManager.wizardWoodAmount >= 1 && WizardResourceManager.wizardWoodAmount >= 1 && WizardResourceManager.wizardWoodAmount >= 1)
             {
                  state = tutorialState.learnTowerBuild;
@@ -80,10 +112,10 @@ public class TutorialState : MonoBehaviour
         }
         if (state == tutorialState.learnTowerBuild)
         {
-            //if(TowerBuild.stage >= 1)
-           // {
+            if(TowerBuild.stage >= 1)
+            {
                //end tutorial
-            //}
+            }
         }
 
 
