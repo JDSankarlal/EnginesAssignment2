@@ -16,12 +16,7 @@ public class TutorialState : MonoBehaviour
         learnPickupFromChest,
         learnTowerBuild
     }
-    //[System.Serializable]
-    //class Test : System.Object
-    //{
-    //    public GameObject player1;
-    //    public GameObject player2;
-    //}
+
     public GameObject player1;
     public GameObject player2;
 
