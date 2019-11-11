@@ -5903,10 +5903,9 @@ MonoBehaviour:
   towerParts:
   - {fileID: 4675644900341352659, guid: 8768e09fd68a49c4f9dd66ed9c35de94, type: 3}
   buildKey: 9
-  stage: 0
-  woodNeeded: 12
-  stoneNeeded: 6
-  crystalNeeded: 3
+  woodNeeded: 1
+  stoneNeeded: 1
+  crystalNeeded: 1
 --- !u!1 &372372233
 GameObject:
   m_ObjectHideFlags: 0
@@ -6973,7 +6972,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.5
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -7853,6 +7852,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa88563cb6b251643a87c179b439616a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1: {fileID: 355610507}
+  player2: {fileID: 1178891859}
   state: 0
 --- !u!1 &1744684323
 GameObject:

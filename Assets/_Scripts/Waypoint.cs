@@ -23,7 +23,7 @@ public class Waypoint : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && !touchedWaypoint)
+        if (other.gameObject.CompareTag("Player 2") && !touchedWaypoint)
         {
             touchedWaypoint = true;
             //Debug.Log("waypoint move??");
@@ -31,7 +31,7 @@ public class Waypoint : MonoBehaviour
             waypointTime = Time.time;
             
         }
-        if (other.gameObject.CompareTag("Player") && !touchedWaypoint2 && touchedWaypoint && Time.time - waypointTime >= 3)
+        if (other.gameObject.CompareTag("Player 2") && !touchedWaypoint2 && touchedWaypoint && Time.time - waypointTime >= 3)
         {
             touchedWaypoint2 = true;
             //Debug.Log("waypoint move 2??");

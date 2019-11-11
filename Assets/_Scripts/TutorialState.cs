@@ -16,22 +16,20 @@ public class TutorialState : MonoBehaviour
         learnPickupFromChest,
         learnTowerBuild
     }
+    //[System.Serializable]
+    //class Test : System.Object
+    //{
+    //    public GameObject player1;
+    //    public GameObject player2;
+    //}
+    public GameObject player1;
+    public GameObject player2;
 
     public tutorialState state;
     private static ObjectPool myPool;
 
-    GameObject fob;
-    float woodSpawnTimer = 0;
-    float woodSmallSpawnTimer = 0;
-    float stoneSpawnTimer = 0;
-    float stoneSmallSpawnTimer = 0;
-    float crystalSpawnTimer = 0;
-    float crystalSmallSpawnTimer = 0;
-
-    float speedBoostSpawnTimer = 0;
-
-    int spawnPointX;
-    int spawnPointZ;
+    GameObject[] fob;
+    ///var fob : GameObject[];
     void Start()
     {
         state = tutorialState.learnMovementStage1;
@@ -41,14 +39,6 @@ public class TutorialState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        woodSpawnTimer += Time.deltaTime;
-        stoneSpawnTimer += Time.deltaTime;
-        crystalSpawnTimer += Time.deltaTime;
-        woodSmallSpawnTimer += Time.deltaTime;
-        stoneSmallSpawnTimer += Time.deltaTime;
-        crystalSmallSpawnTimer += Time.deltaTime;
-        speedBoostSpawnTimer += Time.deltaTime;
-
         if (state == tutorialState.learnMovementStage1)
         {
             //UI: This is a tower building and movement tutorial
@@ -74,7 +64,7 @@ public class TutorialState : MonoBehaviour
         }
         if (state == tutorialState.learnPickupSmall)
         {
-            
+
             if (PlayerPickup.StoneAmount >= 1 && PlayerPickup.WoodAmount >= 1 && PlayerPickup.CrystalAmount >= 1)
             {
                 //delete small resources and start spawning large resources
@@ -96,92 +86,28 @@ public class TutorialState : MonoBehaviour
         {
             if (PlayerPickup.stoneStock >= 1 && PlayerPickup.woodStock >= 1 && PlayerPickup.crystalStock >= 1)
             {
-                //gameObject b  = GameObject.FindGameObjectsWithTag("Player 2");
-                //b.setactive(false);
-                //b = GameObject.FindGameObjectsWithTag("Player 1");
-                //b.setactive(true);
+               //[SerializeField]
+                //player2.setactive(false);
+                //player1.setactive(true);
+                //Test.Equals(this).player1.setactive(false);
+                player1.SetActive(true);
+                player2.SetActive(false);
                 state = tutorialState.learnPickupFromChest;
             }
         }
         if (state == tutorialState.learnPickupFromChest)
         {
-            if(WizardResourceManager.wizardWoodAmount >= 1 && WizardResourceManager.wizardWoodAmount >= 1 && WizardResourceManager.wizardWoodAmount >= 1)
+            if (WizardResourceManager.wizardWoodAmount >= 1 && WizardResourceManager.wizardWoodAmount >= 1 && WizardResourceManager.wizardWoodAmount >= 1)
             {
-                 state = tutorialState.learnTowerBuild;
+                state = tutorialState.learnTowerBuild;
             }
         }
         if (state == tutorialState.learnTowerBuild)
         {
-            if(TowerBuild.stage >= 1)
+            if (TowerBuild.stage >= 1)
             {
-               //end tutorial
+                //end tutorial
             }
         }
-
-
-
-
-
-
-    }
-
-    void Check(tutorialState status)
-    {
-        //switch (status)
-        //{
-        //case tutorialState.learnMovementStage1:
-        //UI: This is a tower building and movement tutorial
-        //UI: Use the mouse to look around, use WASD to move, try moving over to that big beam of light!
-        //spawn waypoint
-        //if (PlayerMovement.touchedWaypoint)
-        //{
-        //Move light beam to different location on map
-        //change to next state
-        //UI: Great, now walk to the next one!
-        //break;
-        //}
-
-
-
-
-        //case tutorialState.learnMovementStage2:
-
-        //if (PlayerMovement.touchedWaypoint)
-        //{
-        //Delete waypoint
-        //change to next state
-        //UI: to pick up small resources just walk over them
-        //   break;
-        //}                
-
-        //if state == learnPickupSmall
-        //if picked up 3 small resources
-        //change to next state
-        //UI: To pick up larger resources you'll have to be tuching it, then hold E for a bit
-
-        //if state == learnPickupLarge
-        //if picked up 3 large resources
-        //change state
-        //UI: Go place those in the chests by touching each chest!
-
-        //if state == learnSorting
-        //If all chests touched
-        //switch camera, set rogue not active, switch spellcaster to active.
-        //change state
-        //UI: Now you're the spellcaster! To grab items out of the chests touch them and press E
-
-        //if state == learnPickupFromChest
-        //if 5 or more of each resource in inventory
-        //change state
-        //UI: Now walk over to the tower and press TAB to build the first phase!
-
-        //if state == learnTowerBuild
-        //if tower stage 1
-        //UI: Great job, now you know the basics of the game! In order to win you will have to be the first team to have all three phases of your tower built. Good Luck!
-        //Wait a few seconds
-        //End Tutorial
-
-
-
     }
 }
