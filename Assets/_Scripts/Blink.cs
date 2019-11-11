@@ -9,7 +9,7 @@ public class Blink : MonoBehaviour
     private PlayerMovement playerMovement;
     private BlinkEffect shaderScript;
     [SerializeField]
-    private MeshRenderer characterRenderer;
+    //private MeshRenderer characterRenderer;
     private float cooldownTime = 2.0f;
     private float nextBlinkTime = 0;
 
@@ -45,9 +45,10 @@ public class Blink : MonoBehaviour
     {
         _animator.SetBool("isBlink", true);
         //playerMovement.MaxSpeed = 10;
+        PlayerMovement.MaxSpeed = 10;
         shaderScript.enabled = !shaderScript.enabled;
         isBlinking = true;
-        characterRenderer.enabled = !characterRenderer.enabled;
+       // characterRenderer.enabled = !characterRenderer.enabled;
         Debug.Log("Blink Active");
         Invoke("StopBlink", blinkTime); //After blinkTime seconds, StopBlink()
     }
@@ -57,9 +58,10 @@ public class Blink : MonoBehaviour
          _animator.SetBool("isBlink", false);
         Debug.Log("Blink Stopped");
         //playerMovement.MaxSpeed = 5;
+        PlayerMovement.MaxSpeed = 5;
         shaderScript.enabled = !shaderScript.enabled;
 
-        characterRenderer.enabled = !characterRenderer.enabled;
+        //characterRenderer.enabled = !characterRenderer.enabled;
         nextBlinkTime = Time.time + cooldownTime;
         isBlinking = false;
     }

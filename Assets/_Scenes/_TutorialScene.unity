@@ -8500,7 +8500,6 @@ GameObject:
   m_Component:
   - component: {fileID: 983787680}
   - component: {fileID: 983787679}
-  - component: {fileID: 983787678}
   - component: {fileID: 983787681}
   m_Layer: 0
   m_Name: minimap camera
@@ -8509,14 +8508,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &983787678
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 983787677}
-  m_Enabled: 1
 --- !u!20 &983787679
 Camera:
   m_ObjectHideFlags: 0
@@ -8586,7 +8577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ddfade5dfd5b244ebd1a414f490e51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2004142344}
+  player: {fileID: 1178891867}
 --- !u!1001 &1039112254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9027,7 +9018,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1128071065}
   - component: {fileID: 1128071067}
-  - component: {fileID: 1128071066}
   - component: {fileID: 1128071068}
   m_Layer: 0
   m_Name: Camera 1
@@ -9051,14 +9041,6 @@ Transform:
   m_Father: {fileID: 355610511}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1128071066
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128071064}
-  m_Enabled: 1
 --- !u!20 &1128071067
 Camera:
   m_ObjectHideFlags: 0
@@ -9130,7 +9112,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1138118885}
   - component: {fileID: 1138118889}
-  - component: {fileID: 1138118888}
   - component: {fileID: 1138118887}
   - component: {fileID: 1138118886}
   m_Layer: 0
@@ -9186,14 +9167,6 @@ MonoBehaviour:
   _cameraLROffset: 0.5
   _cameraUDOffset: 0.7
   SmoothFactor: 0.3
---- !u!81 &1138118888
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138118884}
-  m_Enabled: 0
 --- !u!20 &1138118889
 Camera:
   m_ObjectHideFlags: 0
@@ -9297,8 +9270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 1935686681}
-  characterRenderer: {fileID: 0}
-  blinkTime: 1
+  cooldownTime: 2
+  blinkTime: 2
   key: 122
 --- !u!114 &1178891862
 MonoBehaviour:
