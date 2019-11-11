@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Blink : MonoBehaviour
 {
+    public Animator _animator;
 
     private PlayerMovement playerMovement;
     private BlinkEffect shaderScript;
@@ -14,6 +15,8 @@ public class Blink : MonoBehaviour
 
     public float blinkTime; //Set here or in Inspector to modify the amount of time the player is in "Blink" mode
     private bool isBlinking;
+
+    public KeyCode key;
     // Start is called before the first frame update
 
     void Awake()
@@ -30,7 +33,7 @@ public class Blink : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Blink") && Time.time > nextBlinkTime && !isBlinking)
+        if (Input.GetKeyDown(key) && Time.time > nextBlinkTime && !isBlinking)
         {
 
             ActivateBlink();
@@ -40,7 +43,7 @@ public class Blink : MonoBehaviour
 
     void ActivateBlink()
     {
-
+        _animator.SetBool("isBlink", true);
         //playerMovement.MaxSpeed = 10;
         shaderScript.enabled = !shaderScript.enabled;
         isBlinking = true;
@@ -51,6 +54,7 @@ public class Blink : MonoBehaviour
 
     void StopBlink()
     {
+         _animator.SetBool("isBlink", false);
         Debug.Log("Blink Stopped");
         //playerMovement.MaxSpeed = 5;
         shaderScript.enabled = !shaderScript.enabled;
