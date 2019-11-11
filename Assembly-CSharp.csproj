@@ -77,6 +77,7 @@
      <Compile Include="Assets\_Scripts\TutorialState.cs" />
      <Compile Include="Assets\_Scripts\Waypoint.cs" />
      <Compile Include="Assets\_Scripts\WizardPickup.cs" />
+     <Compile Include="Assets\_Scripts\WizardResourceCounter.cs" />
      <Compile Include="Assets\_Scripts\WizardResourceManager.cs" />
      <None Include="Assets\_FMOD_Studio\all the music\Metadata\SnapshotGroup\{5d21f6e2-ce31-4154-bbdb-028f6aaac3ee}.xml" />
      <None Include="Assets\_FMOD_Studio\all the music\Metadata\Tags.xml" />
