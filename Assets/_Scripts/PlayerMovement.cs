@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
 
     private Vector3 moveDirection;
-
+    
     Rigidbody rb;
     BoxCollider col_size;
 
@@ -48,9 +48,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Check player on the ground or not (Unity build in function)
-    private void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter (Collider other)
     {
         isGrounded = true;
-        
     }
 }

@@ -57,6 +57,7 @@
      <Compile Include="Assets\_Scripts\Blink.cs" />
      <Compile Include="Assets\_Scripts\BlinkEffect.cs" />
      <Compile Include="Assets\_Scripts\CameraMovement.cs" />
+     <Compile Include="Assets\_Scripts\EnemyBehaviour.cs" />
      <Compile Include="Assets\_Scripts\FireballCollision.cs" />
      <Compile Include="Assets\_Scripts\MovementTest.cs" />
      <Compile Include="Assets\_Scripts\ObjectPool.cs" />
@@ -73,7 +74,9 @@
      <Compile Include="Assets\_Scripts\ResourceSpawn.cs" />
      <Compile Include="Assets\_Scripts\ResourceStockpile.cs" />
      <Compile Include="Assets\_Scripts\TowerBuild.cs" />
+     <Compile Include="Assets\_Scripts\TutorialResourceSpawn.cs" />
      <Compile Include="Assets\_Scripts\TutorialState.cs" />
+     <Compile Include="Assets\_Scripts\Waypoint.cs" />
      <Compile Include="Assets\_Scripts\WizardPickup.cs" />
      <Compile Include="Assets\_Scripts\WizardResourceManager.cs" />
      <None Include="Assets\_FMOD_Studio\all the music\Metadata\SnapshotGroup\{5d21f6e2-ce31-4154-bbdb-028f6aaac3ee}.xml" />
