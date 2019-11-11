@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
 
     private Vector3 moveDirection;
-
+    
     Rigidbody rb;
     BoxCollider col_size;
 
@@ -53,4 +53,6 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = true;
         
     }
+
+    
 }
