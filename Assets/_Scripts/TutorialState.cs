@@ -20,6 +20,15 @@ public class TutorialState : MonoBehaviour
     public GameObject player1;
     public GameObject player2;
 
+    public GameObject UI1;
+    public GameObject UI2;
+    public GameObject UI3;
+    public GameObject UI4;
+    public GameObject UI5;
+    public GameObject UI6;
+    public GameObject UI7;
+    public GameObject UI8;
+
     public tutorialState state;
     private static ObjectPool myPool;
 
@@ -53,6 +62,8 @@ public class TutorialState : MonoBehaviour
                 myPool.SpawnObject("Resource(WoodSmall)", new Vector3(-3, 0.5f, -60), transform.rotation);
                 myPool.SpawnObject("Resource(StoneSmall)", new Vector3(0, 0.5f, -60), transform.rotation);
                 myPool.SpawnObject("Resource(CrystalSmall)", new Vector3(3, 0.5f, -60), transform.rotation);
+                UI1.SetActive(false);
+                UI2.SetActive(true);
                 //Debug.Log("Spawn Wood");
                 state = tutorialState.learnPickupSmall;
             }
@@ -66,6 +77,8 @@ public class TutorialState : MonoBehaviour
                 myPool.SpawnObject("Resource(Wood)", new Vector3(-3, 0.5f, -70), transform.rotation);
                 myPool.SpawnObject("Resource(Stone)", new Vector3(0, 0.5f, -70), transform.rotation);
                 myPool.SpawnObject("Resource(Crystal)", new Vector3(3, 0.5f, -70), transform.rotation);
+                UI2.SetActive(false);
+                UI3.SetActive(true);
                 state = tutorialState.learnPickupLarge;
             }
         }
@@ -74,6 +87,8 @@ public class TutorialState : MonoBehaviour
             if (PlayerPickup.StoneAmount >= 3 && PlayerPickup.WoodAmount >= 3 && PlayerPickup.CrystalAmount >= 3)
             {
                 //delete small resources and start spawning large resources
+                UI3.SetActive(false);
+                UI4.SetActive(true);
                 state = tutorialState.learnSorting;
             }
         }
@@ -88,6 +103,8 @@ public class TutorialState : MonoBehaviour
                 player1.SetActive(true);
                 player2.SetActive(false);
                 state = tutorialState.learnPickupFromChest;
+                UI5.SetActive(true);
+               
 
                 MinimapScript._pivot.transform.position = player1.transform.position;
                 MinimapScript._pivot.transform.rotation = player1.transform.rotation;
@@ -98,6 +115,8 @@ public class TutorialState : MonoBehaviour
         {
             if (WizardResourceManager.wizardWoodAmount >= 1 && WizardResourceManager.wizardWoodAmount >= 1 && WizardResourceManager.wizardWoodAmount >= 1)
             {
+                UI5.SetActive(false);
+                UI6.SetActive(true);
                 state = tutorialState.learnTowerBuild;
             }
         }
@@ -105,6 +124,7 @@ public class TutorialState : MonoBehaviour
         {
             if (TowerBuild.stage >= 1)
             {
+                
                 //end tutorial
             }
         }

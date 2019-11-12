@@ -21,7 +21,7 @@ public class TowerBuild : MonoBehaviour
     void Start()
     {
         print("init started");
-        AudioPlayer.init();
+        //AudioPlayer.init();
         print("init finished");
         //  theParent = transform;
     }
@@ -29,13 +29,13 @@ public class TowerBuild : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AudioPlayer.update();
+        //AudioPlayer.update();
     }
 
     void onExit()
     {
-        AudioPlayer.stopAll();
-        AudioPlayer.disable();
+        //AudioPlayer.stopAll();
+        //AudioPlayer.disable();
     }
 
     void OnTriggerStay(Collider obj)
