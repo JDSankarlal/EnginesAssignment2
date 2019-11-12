@@ -7,14 +7,23 @@ using UnityEngine;
 public class MinimapScript : MonoBehaviour
 {
     public Transform player;
+    public Transform pivot;
+    public static Transform _pivot;
+
+    void Start()
+    {
+        _pivot = pivot;
+        _pivot.transform.position = player.transform.position;
+        _pivot.transform.parent = player.transform;
+    }
 
     void LateUpdate()
     {
-        Vector3 newPos = player.position;
+        Vector3 newPos = _pivot.position;
         newPos.y = transform.position.y;
         transform.position = newPos;
 
-        transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
+        transform.rotation = Quaternion.Euler(90f, _pivot.eulerAngles.y, 0f);
     }
 
 

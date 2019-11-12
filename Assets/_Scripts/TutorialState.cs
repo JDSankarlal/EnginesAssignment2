@@ -81,13 +81,16 @@ public class TutorialState : MonoBehaviour
         {
             if (PlayerPickup.stoneStock >= 1 && PlayerPickup.woodStock >= 1 && PlayerPickup.crystalStock >= 1)
             {
-               //[SerializeField]
+                //[SerializeField]
                 //player2.setactive(false);
                 //player1.setactive(true);
                 //Test.Equals(this).player1.setactive(false);
                 player1.SetActive(true);
                 player2.SetActive(false);
                 state = tutorialState.learnPickupFromChest;
+
+                MinimapScript._pivot.transform.position = player1.transform.position;
+                MinimapScript._pivot.transform.parent = player1.transform;
             }
         }
         if (state == tutorialState.learnPickupFromChest)
