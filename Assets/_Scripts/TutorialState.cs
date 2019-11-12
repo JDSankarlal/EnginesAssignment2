@@ -90,6 +90,7 @@ public class TutorialState : MonoBehaviour
                 state = tutorialState.learnPickupFromChest;
 
                 MinimapScript._pivot.transform.position = player1.transform.position;
+                MinimapScript._pivot.transform.rotation = player1.transform.rotation;
                 MinimapScript._pivot.transform.parent = player1.transform;
             }
         }
