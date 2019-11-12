@@ -1,9 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime.InteropServices;
 
 public class TutorialState : MonoBehaviour
 {
+    const string DLL_NAME = "MetricsLogger";
+
+    [DllImport(DLL_NAME)]
+    private static extern void WriteStateToText(float time, int num, bool hasNotWritten);
+
     // Start is called before the first frame update
     public enum tutorialState
     {
@@ -36,6 +42,8 @@ public class TutorialState : MonoBehaviour
     {
         if (state == tutorialState.learnMovementStage1)
         {
+            WriteStateToText(Time.time,1, true);
+
             //UI: This is a tower building and movement tutorial
             //UI: Use the mouse to look around, use WASD to move, try moving over to that big beam of light!
             if (Waypoint.touchedWaypoint)
@@ -47,8 +55,10 @@ public class TutorialState : MonoBehaviour
         }
         if (state == tutorialState.learnMovementStage2)
         {
+             WriteStateToText(Time.time,2,true);
             if (Waypoint.touchedWaypoint2)
             {
+
                 //start pawaning small resources
                 myPool.SpawnObject("Resource(WoodSmall)", new Vector3(-3, 0.5f, -60), transform.rotation);
                 myPool.SpawnObject("Resource(StoneSmall)", new Vector3(0, 0.5f, -60), transform.rotation);
@@ -59,7 +69,7 @@ public class TutorialState : MonoBehaviour
         }
         if (state == tutorialState.learnPickupSmall)
         {
-
+            WriteStateToText(Time.time,3,true);
             if (PlayerPickup.StoneAmount >= 1 && PlayerPickup.WoodAmount >= 1 && PlayerPickup.CrystalAmount >= 1)
             {
                 //delete small resources and start spawning large resources
@@ -71,6 +81,7 @@ public class TutorialState : MonoBehaviour
         }
         if (state == tutorialState.learnPickupLarge)
         {
+            WriteStateToText(Time.time,4,true);
             if (PlayerPickup.StoneAmount >= 3 && PlayerPickup.WoodAmount >= 3 && PlayerPickup.CrystalAmount >= 3)
             {
                 //delete small resources and start spawning large resources
@@ -79,6 +90,7 @@ public class TutorialState : MonoBehaviour
         }
         if (state == tutorialState.learnSorting)
         {
+            WriteStateToText(Time.time,5,true);
             if (PlayerPickup.stoneStock >= 1 && PlayerPickup.woodStock >= 1 && PlayerPickup.crystalStock >= 1)
             {
                //[SerializeField]
@@ -92,6 +104,8 @@ public class TutorialState : MonoBehaviour
         }
         if (state == tutorialState.learnPickupFromChest)
         {
+            WriteStateToText(Time.time,6,true);
+
             if (WizardResourceManager.wizardWoodAmount >= 1 && WizardResourceManager.wizardWoodAmount >= 1 && WizardResourceManager.wizardWoodAmount >= 1)
             {
                 state = tutorialState.learnTowerBuild;
@@ -99,6 +113,7 @@ public class TutorialState : MonoBehaviour
         }
         if (state == tutorialState.learnTowerBuild)
         {
+            WriteStateToText(Time.time,7,true);
             if (TowerBuild.stage >= 1)
             {
                 //end tutorial

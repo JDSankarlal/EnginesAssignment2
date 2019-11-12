@@ -12,6 +12,7 @@ extern "C"
 
 	PLUGIN_API int TestFunction();
 	PLUGIN_API void WriteInputToText(const char* input);
+	PLUGIN_API void WriteStateToText(float time, int num, bool hasNotWritten);
 
 #ifdef __cplusplus
 

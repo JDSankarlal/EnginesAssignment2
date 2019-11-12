@@ -13,3 +13,10 @@ void WriteInputToText(const char* input)
 	return metricsLogger.WriteInputToText(input);
 }
 
+void WriteStateToText(float time, int num, bool hasNotWritten)
+{
+	return metricsLogger.WriteStateToText(time, num, hasNotWritten);
+
+	
+}
+

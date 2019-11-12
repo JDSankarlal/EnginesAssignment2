@@ -10,6 +10,7 @@ public class MetricsLogger : MonoBehaviour
 
     [DllImport(DLL_NAME)]
     private static extern int TestFunction();
+    
     [DllImport(DLL_NAME)]
     private static extern void WriteInputToText();
 
@@ -19,7 +20,7 @@ public class MetricsLogger : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            KeyCode.
+            Debug.Log(TestFunction());
         }
 
         
