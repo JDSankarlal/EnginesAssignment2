@@ -127,7 +127,7 @@ public class TutorialState : MonoBehaviour
         {
             WriteStateToText(Time.time,6,true);
 
-            if (WizardResourceManager.wizardWoodAmount >= 1 && WizardResourceManager.wizardWoodAmount >= 1 && WizardResourceManager.wizardWoodAmount >= 1)
+            if (WizardResourceManager.wizardWoodAmount >= 1 && WizardResourceManager.wizardStoneAmount >= 1 && WizardResourceManager.wizardCrystalAmount >= 1)
             {
                 UI5.SetActive(false);
                 UI6.SetActive(true);
